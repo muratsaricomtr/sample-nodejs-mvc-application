@@ -1,10 +1,22 @@
 exports.getIndex = (req, res, next) => {
-    res.render("login");
+    let message = null;
+    res.render("login", {message});
 };
 
 exports.postIndex = (req, res, next) => {
 
-    console.log(req.body.email);
-    res.writeHead(301, { Location: '/login' });
-    res.end();
+    let email = 'sample@mail.com';
+    let password = 'secret';
+
+    if (req.body.email == email && req.body.password == password)
+    {
+        req.session.user = true;
+
+        res.writeHead(301, { Location: '/myalbums' });
+        res.end();
+    } else {
+        let message = "Invalid credentials! Given email or password is wrong.";
+        res.render("login", {message});
+    }
+
 };
