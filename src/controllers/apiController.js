@@ -2,10 +2,13 @@ const axios = require('axios');
 
 exports.getImages = (req, res, next) => {
 
+    // If user session doesn't exists, serve empty array
     if (!req.session.user)
     {
         return res.send([]);
     } else {
+
+        // Define album id from query parameters
         const id = req.params.id;
 
         axios.get('https://jsonplaceholder.typicode.com/albums/'+id+'/photos')
@@ -14,6 +17,7 @@ exports.getImages = (req, res, next) => {
                 let results = response.data;
                 let counter = 0;
 
+                // Sample JSON returns all images, get only album's (specified by ID) images,
                 let images = [];
                 for (let i=0; i<results.length; i++)
                 {
@@ -25,6 +29,7 @@ exports.getImages = (req, res, next) => {
                     }
                 }
 
+                // Response JSON data
                 return res.send(images);
 
 
