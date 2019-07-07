@@ -3,7 +3,15 @@ let app = express();
 
 //Session
 const session = require("express-session");
-app.use(session({secret: 'session-secret-key'}));
+
+let FileStore = require('session-file-store')(session);
+
+app.use(session({
+    store: new FileStore({}),
+    secret: 'session-secret-key',
+    resave: false,
+    saveUninitialized: true
+}));
 
 //Server Settings
 const PORT = 5000;

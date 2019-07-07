@@ -1,4 +1,3 @@
-
 // Serve login page
 exports.getIndex = (req, res, next) => {
     let message = null;
@@ -27,4 +26,12 @@ exports.postIndex = (req, res, next) => {
         res.render("login", {message});
     }
 
+};
+
+// Logout Process
+exports.getLogout = (req, res, next) => {
+    req.session.user = false;
+
+    res.writeHead(301, { Location: '/myalbums' });
+    res.end();
 };

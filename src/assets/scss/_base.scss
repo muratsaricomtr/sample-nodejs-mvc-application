@@ -52,6 +52,7 @@ html {
 
       img {
         width: 100%;
+        cursor: pointer;
       }
     }
 
@@ -116,5 +117,13 @@ form {
       padding: 10px 40px;
       float: right;
     }
+  }
+}
+
+h1 {
+  a {
+    font-size: 14px;
+    padding-left: 20px;
+    color: #f00;
   }
 }
