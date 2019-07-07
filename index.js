@@ -1,18 +1,16 @@
 const express = require("express");
 let app = express();
 
-
 //Session
 const session = require("express-session");
 app.use(session({secret: 'session-secret-key'}));
-
-
 
 //Server Settings
 const PORT = 5000;
 const path = require("path");
 const bodyParser = require("body-parser");
 const bootstrap = require("./src/bootstrap");
+
 
 //Pug Template Engine
 app.set("view engine", "pug");
@@ -29,6 +27,7 @@ const rootPath = path.resolve("./dist");
 app.use(express.static(rootPath));
 
 bootstrap(app, router);
+
 
 //Index Page
 router.get("/", (req, res, next) => {
