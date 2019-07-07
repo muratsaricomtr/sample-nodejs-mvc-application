@@ -28,10 +28,10 @@ app.use(express.static(rootPath));
 
 bootstrap(app, router);
 
-
 //Index Page
 router.get("/", (req, res, next) => {
-    return res.send("Sample NodeJS MVC Application");
+    res.writeHead(301, { Location: '/login' });
+    res.end();
 });
 
 router.use((err, req, res, next) => {
