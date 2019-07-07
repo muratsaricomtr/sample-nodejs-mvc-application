@@ -1,14 +1,6 @@
-function murat(results) {
-
-
-
-}
-
 let container = document.querySelector("ul#albums");
 container.querySelectorAll('li').forEach(function(click){
-    click.addEventListener("click",function(){
-
-
+    click.addEventListener("click",function() {
         axios.get('https://jsonplaceholder.typicode.com/albums/'+this.id+'/photos')
             .then(response => {
 
@@ -24,12 +16,23 @@ container.querySelectorAll('li').forEach(function(click){
                         if (++counter == 8)
                             break;
                     }
-
-
                 }
 
-                console.log(response);
-                console.log(images);
+                let albumsContainer = document.getElementsByClassName('album-container')[0];
+
+                albumsContainer.innerHTML = '';
+
+                for (let i in images)
+                {
+                    console.log();
+
+                    var img = document.createElement("img");
+                    img.src = images[i].thumbnailUrl;
+                    img.alt = "Album Image";
+                    img.setAttribute('data-url', images[i].url);
+
+                    albumsContainer.appendChild(img);
+                }
 
 
             })
