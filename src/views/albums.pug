@@ -1,16 +1,18 @@
 html
     head
         link(rel='stylesheet', href='style.css', type='text/css' )
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Quicksand&display=swap', type='text/css' )
     body
-        h1 My Albums And Photos
+        div.container
+            h1 My Albums And Photos
+            div.row
+                div.aside
+                    ul#albums
+                        for album in albums
+                            li(id=album.id) #{album.title}
+                div.album-container
+            div.row
+                div.full-image-container
 
-        div.row
-            div.aside
-                ul#albums
-                    for album in albums
-                        li(id=album.id) #{album.title}
 
-            div.album-container
-
-
-        script(src='/app.js')
+            script(src='/app.js')
