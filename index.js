@@ -14,7 +14,7 @@ app.use(session({
 }));
 
 //Server Settings
-const PORT = 80;
+const PORT = 5000;
 const path = require("path");
 const bodyParser = require("body-parser");
 const bootstrap = require("./src/bootstrap");
