@@ -6,7 +6,7 @@ const session = require("express-session");
 app.use(session({secret: 'session-secret-key'}));
 
 //Server Settings
-const PORT = 5000;
+const PORT = 80;
 const path = require("path");
 const bodyParser = require("body-parser");
 const bootstrap = require("./src/bootstrap");
