@@ -1,0 +1,24 @@
+html
+    head
+        link(rel='stylesheet', href='style.css', type='text/css' )
+    body
+        h1 My Albums And Photos
+
+        div.row
+            div.aside
+                ul#albums
+                    for album in albums
+                        li(id=album.id) #{album.title}
+
+            div.album-container
+                div
+                    img(src="https://via.placeholder.com/150/92c952")
+                div
+                    img(src="https://via.placeholder.com/150/92c952")
+                div
+                    img(src="https://via.placeholder.com/150/92c952")
+                div
+                    img(src="https://via.placeholder.com/150/92c952")
+
+
+        script(src='/app.js')
