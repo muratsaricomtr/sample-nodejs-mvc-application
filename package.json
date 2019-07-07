@@ -1,0 +1,19 @@
+{
+  "name": "sample-nodejs-mvc-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muratsaricomtr/sample-nodejs-mvc-application.git"
+  },
+  "author": "Murat Sarı",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muratsaricomtr/sample-nodejs-mvc-application/issues"
+  },
+  "homepage": "https://github.com/muratsaricomtr/sample-nodejs-mvc-application#readme"
+}
