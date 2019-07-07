@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon --exec babel-node --presets env index.js"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "gulp-uglify-es": "^1.0.4",
     "gulp-watch": "^5.0.1",
     "node": "^12.6.0",
+    "normalize-scss": "^7.0.1",
     "pug": "^2.0.4",
     "run-sequence": "^2.2.1"
   },
