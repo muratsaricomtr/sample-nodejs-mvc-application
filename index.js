@@ -7,7 +7,7 @@ const session = require("express-session");
 let FileStore = require('session-file-store')(session);
 
 app.use(session({
-    store: new FileStore({}),
+    //store: new FileStore({}),
     secret: 'session-secret-key',
     resave: false,
     saveUninitialized: true

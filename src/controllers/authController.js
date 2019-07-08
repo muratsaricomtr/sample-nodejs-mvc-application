@@ -30,8 +30,8 @@ exports.postIndex = (req, res, next) => {
 
 // Logout Process
 exports.getLogout = (req, res, next) => {
-    req.session.user = false;
+    req.session.destroy();
 
-    res.writeHead(301, { Location: '/myalbums' });
+    res.writeHead(301, { Location: '/login' });
     res.end();
 };
